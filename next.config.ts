@@ -1,15 +1,14 @@
 import type { NextConfig } from "next";
-import type { Configuration } from 'webpack'
+import path from "path";
 
-const nextConfig = {
-  /* handle 3D model files */
-  webpack: (config: Configuration) => {
-    config.module.rules.push({
-      test: /\.(glb|gltf)$/,
-      use: { loader: 'file-loader' }
-    });
-    return config;
-  }
+const nextConfig: NextConfig = {
+  turbopack: {
+    root: path.resolve(__dirname),
+    rules: {
+      "*.glb": { type: "asset" },
+      "*.gltf": { type: "asset" },
+    },
+  },
 };
 
 export default nextConfig;
