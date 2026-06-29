@@ -22,7 +22,7 @@ const experiences = [
     end: 'present',
     projects: [
       {
-        name: 'DEFT',
+        name: ['DEFT', ' ****add website****'],
         bullets: [
           "Optimized PyTorch training pipeline for simulating branched deformable linear objects (BDLOs) through systematic hyperparameter grid search and gradient checking",
           "Accelerated BDLO simulation convergence by 5x by increasing simulation timestep while maintaining numerical stability by implementing frame-skipping and physics sub-stepping",

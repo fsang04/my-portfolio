@@ -104,7 +104,24 @@ import { useState } from 'react'
 import { ChevronLeft } from 'lucide-react'
 
 const projects = [
-  { name: 'project-alpha', desc: 'Lorem ipsum dolor sit amet consectetur adipiscing elit.', fullDesc: 'Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', stack: ['react', 'typescript'], year: '2024', github: '#', live: '#' },
+  {
+    name: 'RoboCup Soccer Agent Control',
+    desc: 'Multi-robot soccer system with FSM-based passing strategy, Theta* pathfinding, and RL-trained locomotion policies for simulated humanoid agents.',
+    fullDesc: 'Developed a multi-robot soccer passing system for simulated humanoid robots in RoboCup. Designed a Finite State Machine (FSM) to coordinate passing and receiving roles dynamically based on real-time ball proximity and teammate awareness. Implemented an anytime Theta* pathfinding algorithm on a 10cm grid world with obstacle inflation, producing shorter paths than standard A* while remaining computationally minimal. Trained separate RL locomotion policies (get-up, walking, ball-aware locomotion) in IsaacLab using PPO via the rsl-rl framework. Integrated all components into a unified pipeline using the booster_gym framework.',
+    stack: ['Python', 'IsaacLab', 'PPO', 'rsl-rl', 'theta*', 'MuJoCo'],
+    year: '2026',
+    github: null,
+    live: null,
+  },
+  {
+    name: '3D-SLIP for BDX Droid with 5-DoF Legs',
+    desc: 'Model-based control pipeline for an inverted-knee biped performing dynamic long-jump motions using SLIP dynamics and trajectory optimization.',
+    fullDesc: 'Implemented a control pipeline for the Open Duck Mini v2, an open-source recreation of Disney Research\'s BDX Droid, to perform dynamic long-jump motions. Integrated 2D/3D Spring-Loaded Inverted Pendulum (SLIP) dynamics, offline trajectory optimization via trapezoidal collocation, and model-based control within MuJoCo. Implemented PD and Whole-Body Control (WBC) for 2D planar motion, and Prioritized Task-Space Control (PTSC) for 3D motion. Comparative analysis with a benchmark biped validated control logic — performance gaps attributed to low-fidelity physical parameters from automated CAD-to-MJCF conversion.',
+    stack: ['MuJoCo', 'MATLAB', 'Python', 'LCM', 'OnShape'],
+    year: '2025',
+    github: null,
+    live: null,
+  },
   { name: 'project-beta', desc: 'Sed do eiusmod tempor incididunt ut labore et dolore magna.', fullDesc: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', stack: ['next.js', 'tailwind'], year: '2023', github: '#', live: null },
   { name: 'project-gamma', desc: 'Ut enim ad minim veniam quis nostrud exercitation ullamco.', fullDesc: 'Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident sunt in culpa.', stack: ['three.js', 'spline'], year: '2023', github: '#', live: '#' },
   { name: 'project-delta', desc: 'Duis aute irure dolor in reprehenderit in voluptate velit.', fullDesc: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident deserunt mollit.', stack: ['node.js', 'postgresql'], year: '2022', github: '#', live: null },
@@ -119,24 +136,24 @@ export default function ProjectsPage() {
       <div className="flex flex-col gap-4 font-mono h-full pt-8">
         <button
           onClick={() => setSelected(null)}
-          className="flex items-center gap-1 text-white/30 hover:text-white text-xs transition-colors"
+          className="flex items-center gap-1 text-white/50 hover:text-white text-xs transition-colors"
         >
           <ChevronLeft size={12} />
           back
         </button>
         <div className="flex items-baseline justify-between">
           <h2 className="text-white text-xl">{p.name}</h2>
-          <span className="text-white/20 text-xs">{p.year}</span>
+          <span className="text-white/40 text-xs">{p.year}</span>
         </div>
-        <p className="text-white/50 text-xs leading-relaxed">{p.fullDesc}</p>
+        <p className="text-white/70 text-xs leading-relaxed">{p.fullDesc}</p>
         <div className="flex gap-1 flex-wrap">
           {p.stack.map((s) => (
-            <span key={s} className="text-white/25 text-xs">#{s}</span>
+            <span key={s} className="text-white/45 text-xs">#{s}</span>
           ))}
         </div>
         <div className="flex gap-4 mt-auto">
-          <a href={p.github} className="text-white/40 text-xs hover:text-white transition-colors">[ github ]</a>
-          {p.live && <a href={p.live} className="text-white/40 text-xs hover:text-white transition-colors">[ live ]</a>}
+          {p.github && <a href={p.github} className="text-white/60 text-xs hover:text-white transition-colors">[ github ]</a>}
+          {p.live && <a href={p.live} className="text-white/60 text-xs hover:text-white transition-colors">[ live ]</a>}
         </div>
       </div>
     )
@@ -152,12 +169,12 @@ export default function ProjectsPage() {
         >
           <div className="flex justify-between items-start">
             <span className="text-white text-xs">{p.name}</span>
-            <span className="text-white/20 text-xs">{p.year}</span>
+            <span className="text-white/40 text-xs">{p.year}</span>
           </div>
-          <p className="text-white/40 text-xs leading-relaxed">{p.desc}</p>
+          <p className="text-white/60 text-xs leading-relaxed">{p.desc}</p>
           <div className="flex gap-1 flex-wrap mt-auto pt-2">
             {p.stack.map((s) => (
-              <span key={s} className="text-white/25 text-xs">#{s}</span>
+              <span key={s} className="text-white/45 text-xs">#{s}</span>
             ))}
           </div>
         </div>
