@@ -1,17 +1,15 @@
-import { ViewTransition } from 'react'
+'use client'
+import { useState } from 'react'
 import SplineScene from '@/components/spline-scene'
+import { PageOverlay } from '@/components/pageoverlay'
 
 export default function Home() {
+  const [activeSection, setActiveSection] = useState(null)
+
   return (
-    <ViewTransition
-      name="page"
-      enter={{ 'nav-forward': 'nav-forward', default: 'none' }}
-      exit={{ 'nav-forward': 'nav-forward', default: 'none' }}
-      default="none"
-    >
-      <main>
-        <SplineScene />
-      </main>
-    </ViewTransition>
+    <main>
+      <SplineScene onKeyPress={setActiveSection} />
+      <PageOverlay section={activeSection} onClose={() => setActiveSection(null)} />
+    </main>
   )
 }

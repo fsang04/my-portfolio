@@ -3,22 +3,17 @@
 import Spline from '@splinetool/react-spline'
 import { useRouter } from 'next/navigation'
 
-const KEY_ROUTES = {
+const KEY_SECTIONS = {
   'key-about-me': '/about',
   'key-resume': '/resume',
   'key-projects': '/projects',
   'key-experience': '/experience',
 }
 
-export default function SplineScene() {
-  const router = useRouter()
-
+export default function SplineScene({ onKeyPress }) {
   function onSplineMouseDown(e) {
-    console.log('clicked:', e.target.name)
-    const route = KEY_ROUTES[e.target.name]
-    if (route) {
-      router.push(route, { transitionTypes: ['nav-forward'] })
-    }
+    const section = KEY_SECTIONS[e.target.name]
+    if (section) onKeyPress(section)
   }
 
   return (
