@@ -19,8 +19,8 @@ export default function Home() {
         <span className="block w-6 h-0.5 bg-white" />
         <span className="block w-6 h-0.5 bg-white" />
       </button>
-      <ControlsKey />
       <SplineScene onKeyPress={setActiveSection} />
+      <ControlsKey />
       <PageOverlay section={activeSection} onClose={() => setActiveSection(null)} />
       <ProfileDrawer open={drawerOpen} onClose={() => setDrawerOpen(false)} />
     </main>

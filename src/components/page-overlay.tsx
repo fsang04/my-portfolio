@@ -16,7 +16,7 @@ const SECTIONS: Record<string, React.ReactNode> = {
 export function PageOverlay({ section, onClose }: { section: string | null, onClose: () => void }) {
   const [expanded, setExpanded] = useState(false)
   const contentRef = useRef<HTMLDivElement>(null)
-
+  console.log('active section:', section)
   function handleScroll(e: React.UIEvent<HTMLDivElement>) {
     const el = contentRef.current
     if (!el) return
@@ -40,7 +40,7 @@ export function PageOverlay({ section, onClose }: { section: string | null, onCl
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/40"
+            className="fixed inset-0 bg-black/40 z-40"
             onClick={onClose}
           />
 
@@ -50,11 +50,11 @@ export function PageOverlay({ section, onClose }: { section: string | null, onCl
             animate={{ y: 0, height: expanded ? '95vh' : '60vh' }}
             exit={{ y: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed bottom-0 left-0 right-0 bg-white/70 backdrop-blur-sm rounded-t-2xl flex flex-col overflow-hidden"
+            className="fixed bottom-0 left-0 right-0 backdrop-blur-sm rounded-t-2xl flex flex-col overflow-hidden z-50" // bg-white/70 
           >
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-sm text-gray-500 z-10"
+              className="absolute top-4 right-4 text-sm text-white/50 hover:text-white transition-colors z-10"
             >
               close
             </button>

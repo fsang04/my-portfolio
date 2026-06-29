@@ -4,10 +4,10 @@ import Spline from '@splinetool/react-spline'
 import { useEffect, useRef } from 'react'
 
 const KEY_SECTIONS = {
-  'key-about-me': '/about',
-  'key-resume': '/resume',
-  'key-projects': '/projects',
-  'key-experience': '/experience',
+  'key-about-me': 'about',
+  'key-resume': 'resume',
+  'key-projects': 'projects',
+  'key-experience': 'experience',
 }
 
 export default function SplineScene({ onKeyPress }) {
