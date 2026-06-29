@@ -1,7 +1,6 @@
 import { ViewTransition } from 'react'
-import SplineScene from '@/components/spline-scene'
 
-export default function Home() {
+export default function AboutPage() {
   return (
     <ViewTransition
       name="page"
@@ -9,9 +8,7 @@ export default function Home() {
       exit={{ 'nav-forward': 'nav-forward', default: 'none' }}
       default="none"
     >
-      <main>
-        <SplineScene />
-      </main>
+      <main>About Me</main>
     </ViewTransition>
   )
 }
