@@ -1,7 +1,7 @@
 'use client'
 
 import Spline from '@splinetool/react-spline'
-import { useRouter } from 'next/navigation'
+import { useEffect, useRef } from 'react'
 
 const KEY_SECTIONS = {
   'key-about-me': '/about',
@@ -11,8 +11,15 @@ const KEY_SECTIONS = {
 }
 
 export default function SplineScene({ onKeyPress }) {
+  const pendingKey = useRef(null)
+
   function onSplineMouseDown(e) {
-    const section = KEY_SECTIONS[e.target.name]
+    pendingKey.current = KEY_SECTIONS[e.target.name] ?? null
+  }
+
+  function onSplineMouseUp(e) {
+    const section = KEY_SECTIONS[e.target.name] ?? pendingKey.current
+    pendingKey.current = null
     if (section) onKeyPress(section)
   }
 
@@ -20,6 +27,7 @@ export default function SplineScene({ onKeyPress }) {
     <Spline
       scene="https://prod.spline.design/IAA9OKmS5RJjnCeT/scene.splinecode"
       onSplineMouseDown={onSplineMouseDown}
+      onSplineMouseUp={onSplineMouseUp}
     />
   )
 }
