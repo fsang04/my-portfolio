@@ -5,12 +5,14 @@ import AboutPage from '@/app/about/page'
 import ExperiencePage from '@/app/experience/page'
 import ProjectsPage from '@/app/projects/page'
 import ResumePage from '@/app/resume/page'
+import ForFunPage from '@/app/for-fun/page'
 
 const SECTIONS: Record<string, React.ReactNode> = {
   about: <AboutPage />,
   experience: <ExperiencePage />,
   projects: <ProjectsPage />,
   resume: <ResumePage />,
+  forfun: <ForFunPage />
 }
 
 export function PageOverlay({ section, onClose }: { section: string | null, onClose: () => void }) {
@@ -50,11 +52,11 @@ export function PageOverlay({ section, onClose }: { section: string | null, onCl
             animate={{ y: 0, height: expanded ? '95vh' : '60vh' }}
             exit={{ y: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed bottom-0 left-0 right-0 backdrop-blur-sm rounded-t-2xl flex flex-col overflow-hidden z-50" // bg-white/70 
+            className="fixed bottom-0 left-0 right-0 backdrop-blur-sm rounded-t-2xl flex flex-col overflow-hidden z-50 shadow-[0_-8px_32px_rgba(0,0,0,0.6)]" // bg-white/70 
           >
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 text-sm text-white/50 hover:text-white transition-colors z-10"
+              className="absolute top-4 right-8 text-sm font-mono text-white/50 hover:text-white transition-colors z-10"
             >
               close
             </button>
@@ -62,7 +64,7 @@ export function PageOverlay({ section, onClose }: { section: string | null, onCl
             <div
               ref={contentRef}
               onScroll={handleScroll}
-              className="overflow-y-auto flex-1 px-8 pt-8 pb-8"
+              className="overflow-y-auto flex-1 px-8 pt-4 pb-15"
             >
               {SECTIONS[section]}
             </div>

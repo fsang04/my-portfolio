@@ -8,6 +8,7 @@ const KEY_SECTIONS = {
   'key-resume': 'resume',
   'key-projects': 'projects',
   'key-experience': 'experience',
+  'key-for-fun': 'forfun',
 }
 
 export default function SplineScene({ onKeyPress }) {
