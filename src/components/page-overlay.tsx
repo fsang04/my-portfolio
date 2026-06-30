@@ -82,9 +82,9 @@ export function PageOverlay({ section, onClose }: { section: string | null, onCl
               // onWheel={handleWheel}
               // slow down scroll speed by preventing default browser and manually setting scroll speed 
               onWheelCapture={(e) => { 
-                e.preventDefault() 
-                const el = contentRef.current
-                if (el) el.scrollTop += e.deltaY * 0.01
+                // e.preventDefault() 
+                // const el = contentRef.current
+                // if (el) el.scrollTop += e.deltaY * 0.01
                 handleWheel(e)
               }}
               className="overflow-y-auto flex-1 px-8 pt-4 pb-15"
