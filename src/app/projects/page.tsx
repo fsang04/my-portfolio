@@ -144,9 +144,9 @@ const projects = [
     images: ['/projects/bdx-droid/droid.png', '/projects/bdx-droid/control-loop.png'],
     videos: ['/projects/bdx-droid/bipedvis.mp4'],
   },
-  { name: 'project-beta', desc: 'Sed do eiusmod tempor incididunt ut labore et dolore magna.', fullDesc: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', stack: ['next.js', 'tailwind'], year: '2023', github: '#', live: null },
-  { name: 'project-gamma', desc: 'Ut enim ad minim veniam quis nostrud exercitation ullamco.', fullDesc: 'Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident sunt in culpa.', stack: ['three.js', 'spline'], year: '2023', github: '#', live: '#' },
-  { name: 'project-delta', desc: 'Duis aute irure dolor in reprehenderit in voluptate velit.', fullDesc: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident deserunt mollit.', stack: ['node.js', 'postgresql'], year: '2022', github: '#', live: null },
+  { name: 'project-beta', desc: 'Sed do eiusmod tempor incididunt ut labore et dolore magna.', fullDesc: ['Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'], stack: ['next.js', 'tailwind'], year: '2023', github: '#', live: null },
+  { name: 'project-gamma', desc: 'Ut enim ad minim veniam quis nostrud exercitation ullamco.', fullDesc: ['Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident sunt in culpa.'], stack: ['three.js', 'spline'], year: '2023', github: '#', live: '#' },
+  { name: 'project-delta', desc: 'Duis aute irure dolor in reprehenderit in voluptate velit.', fullDesc: ['Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident deserunt mollit.'], stack: ['node.js', 'postgresql'], year: '2022', github: '#', live: null },
 ]
 
 export default function ProjectsPage() {
