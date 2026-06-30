@@ -150,7 +150,7 @@ const projects = [
 ]
 
 export default function ProjectsPage() {
-  const [selected, setSelected] = useState(null)
+  const [selected, setSelected] = useState<number | null>(null)
 
   if (selected !== null) {
     const p = projects[selected]
