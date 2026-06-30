@@ -1,5 +1,3 @@
-'use client'
-
 const skills = [
   { category: 'languages', items: ['Python', 'C/C++', 'Java', 'R'] },
   { category: 'frameworks and libraries', items: ['ROS/ROS2', 'Ubuntu', 'MATLAB', 'PyTorch', 'RSL-RL', 'Kokkos', 'scikit-learn'] },
@@ -29,7 +27,7 @@ export default function ResumePage() {
         <iframe
           src="/resume.pdf"
           className="w-full h-full rounded"
-          style={{ minHeight: '70vh' }}
+          style={{ minHeight: '50vh' }}
         />
       </div>
     </div>
