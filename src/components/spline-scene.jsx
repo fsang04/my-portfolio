@@ -26,15 +26,15 @@ export default function SplineScene({ onKeyPress }) {
 
   // using mouse down and mouse press events
   function onSplineMouseDown(e) {
+    console.log('spline mousedown')
     const section = KEY_SECTIONS[e.target.name]
-    if (section) onKeyPress(section)
+    if (section) requestAnimationFrame(() => onKeyPress(section))
   }
 
   return (
     <Spline
       scene="https://prod.spline.design/IAA9OKmS5RJjnCeT/scene.splinecode"
       onSplineMouseDown={onSplineMouseDown}
-      // onSplineMouseUp={onSplineMouseUp}
     />
   )
 }
