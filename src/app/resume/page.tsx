@@ -1,6 +1,6 @@
 const skills = [
   { category: 'languages', items: ['Python', 'C/C++', 'Java', 'R'] },
-  { category: 'frameworks and libraries', items: ['ROS/ROS2', 'Ubuntu', 'MATLAB', 'PyTorch', 'RSL-RL', 'Kokkos', 'scikit-learn'] },
+  { category: 'frameworks and libraries', items: ['ROS/ROS2', 'Ubuntu', 'MATLAB', 'PyTorch', 'RSL-RL', 'Kokkos', 'URDF/MJCF', 'scikit-learn'] },
   { category: 'simulation', items: ['MuJoCo', 'IsaacSim/IsaacLab', 'PyBullet']},
   { category: 'tools', items: ['VSCode', 'git', 'conda', 'Docker'] },
 ]

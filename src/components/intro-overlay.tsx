@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const LINKS = [
   { label: 'LinkedIn', href: 'https://linkedin.com/in/feliciasang' },
-  { label: 'GitHub', href: 'https://github.com/fsang' },
+  // { label: 'GitHub', href: 'https://github.com/fsang' },
   { label: 'Email', href: 'mailto:fsang@umich.edu' },
 ]
 
@@ -23,10 +23,11 @@ export function IntroOverlay() {
         >
           <div className="text-center px-8 max-w-2xl">
             <h1 className="text-6xl font-bold text-white mb-5 tracking-tight">
-              Hi, I&apos;m Felicia Sang.
+              {/* Hi, I&apos;m Felicia. */}
+              Felicia Sang
             </h1>
             <p className="text-lg text-white/65 mb-10 leading-relaxed">
-              Software engineer & creative technologist. I build things at the intersection of design and engineering.
+              Robotics @ University of Michigan
             </p>
             <div className="flex gap-8 justify-center mb-16">
               {LINKS.map(({ label, href }) => (
